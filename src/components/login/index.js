@@ -1,9 +1,8 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import styles from './style.css';
-import axios from 'axios';
-import cookie from 'react-cookie';
 import Header from '../header/index';
+import {isAuthenticated,loginAndAuthenticate} from '../../services/authentication'
 
 
 
@@ -15,24 +14,19 @@ export default class LoginPage extends React.Component {
               error : false
           };
 
-        if(cookie.load('Authorization')){
-              browserHistory.push('/');
-        }
         this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  componentWillMount(){
+      if(isAuthenticated()){
+          browserHistory.push('/');
+      }
   }
 
     handleSubmit(e) {
       e.preventDefault();
-       var email = this.refs.email.value;
-       var pass = this.refs.pass.value;
-       var loginData = {
-           email: email,
-           password: pass
-       }
-      axios.post('https://i2x-challenge.herokuapp.com/core/login/',loginData).then(res => {
-          cookie.save('Authorization',res.data.token);
+        loginAndAuthenticate(this.refs.email.value,this.refs.pass.value)
+          .then(() => {
           browserHistory.push('/');
-
       }).catch(() => {
           this.setState({error: true})
       });
@@ -47,8 +41,6 @@ export default class LoginPage extends React.Component {
             <div className={styles.content}>
 
               <div className={styles.card} >
-
-
 
                   <form  onSubmit={this.handleSubmit}>
                       <label> <span>Email:</span> <input type="text" ref="email" /></label><br/>

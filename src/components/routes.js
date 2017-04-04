@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import cookie from 'react-cookie';
+import {isAuthenticated} from '../services/authentication'
 
 
 import App from './app';
@@ -8,7 +8,7 @@ import LoginPage from './login/index';
 import HomePage from './home/index';
 
 function requireAuth(nextState, replace) {
-    if (!cookie.load('Authorization')) {
+    if (!isAuthenticated()) {
         replace({
             pathname: '/login'
         })

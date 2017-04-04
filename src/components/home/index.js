@@ -5,6 +5,7 @@ import cookie from 'react-cookie';
 import Recording from './recording-card/index'
 import { browserHistory } from 'react-router';
 import Header from '../header/index';
+import {getJwtToken} from '../../services/authentication'
 
 
 
@@ -16,7 +17,7 @@ export default class HomePage extends React.Component {
 
    componentWillMount(){
        axios.get('https://i2x-challenge.herokuapp.com/ai/recording/list/',{headers:{
-           'Authorization':'JWT '+ cookie.load('Authorization')
+           'Authorization':getJwtToken()
        }}).then(res => {
            this.setState({recordings:res.data.results})
        }).catch(err => {
