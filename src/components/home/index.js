@@ -31,7 +31,7 @@ export default class HomePage extends React.Component {
             <Header></Header>
             <div className={styles.content}>
                   { this.state.recordings.map(function(item) {
-                      return <Recording key={item.toString()} recording={item}></Recording>
+                      return <Recording key={item.url} recording={item}></Recording>
                   })
                   }
               </div>
