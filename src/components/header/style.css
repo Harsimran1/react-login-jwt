@@ -1,0 +1,40 @@
+.header{
+    background-color: #4B9DA3;
+    height: 50px;
+    border-radius: 3px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0px;
+    left:0px;
+    line-height: 50px;
+    font-weight: 500;
+    color: #FFFFFF;
+
+}
+
+@media (min-width: 960px) {
+    .content{
+        width: 960px;
+        margin: 0 auto;
+    }
+
+}
+
+.content div{
+    height: 100%;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.content div:nth-child(1){
+    width:  85%;
+    padding-left: 1%;
+
+}
+.content div:nth-child(2){
+    width:  14%;
+    cursor: pointer;
+    text-align: right;
+
+}
