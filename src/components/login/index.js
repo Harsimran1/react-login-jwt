@@ -41,21 +41,27 @@ export default class LoginPage extends React.Component {
   
   render() {
     return (
+        <div>
+            <Header></Header>
 
-      <div className={styles.card + ' ' + styles.content} >
+            <div className={styles.content}>
 
-          <Header></Header>
+              <div className={styles.card} >
 
-          <form  onSubmit={this.handleSubmit}>
-              <label> <span>Email:</span> <input type="text" ref="email" /></label><br/>
-              <label> <span>Password:</span> <input type="password" ref="pass" /></label><br/>
-              <button className={styles.login_button} type="submit">login</button>
-              {(this.state.error)?  (
-                  <div className={styles.error}>Bad login information</div>
-              ):""}
-          </form>
 
-      </div>
+
+                  <form  onSubmit={this.handleSubmit}>
+                      <label> <span>Email:</span> <input type="text" ref="email" /></label><br/>
+                      <label> <span>Password:</span> <input type="password" ref="pass" /></label><br/>
+                      <button className={styles.login_button} type="submit">login</button>
+                      {(this.state.error)?  (
+                          <div className={styles.error}>Bad login information</div>
+                      ):""}
+                  </form>
+
+              </div>
+            </div>
+        </div>
     );
   }
 }

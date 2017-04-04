@@ -13,6 +13,10 @@
 
 }
 
+.content{
+    width: 100%
+}
+
 @media (min-width: 960px) {
     .content{
         width: 960px;
@@ -28,12 +32,12 @@
 }
 
 .content div:nth-child(1){
-    width:  85%;
+    width:  50%;
     padding-left: 1%;
 
 }
 .content div:nth-child(2){
-    width:  14%;
+    width:  50%;
     cursor: pointer;
     text-align: right;
 
