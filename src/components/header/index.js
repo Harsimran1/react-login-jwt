@@ -1,6 +1,5 @@
 import React from "react";
 import { browserHistory } from 'react-router';
-import cookie from 'react-cookie';
 import styles from "./style.css";
 import {removeAuthentication,isAuthenticated} from '../../services/authentication'
 

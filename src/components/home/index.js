@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./style.css";
 import axios from 'axios';
-import cookie from 'react-cookie';
 import Recording from './recording-card/index'
 import { browserHistory } from 'react-router';
 import Header from '../header/index';
