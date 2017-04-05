@@ -18,7 +18,7 @@ export default class Header extends React.Component {
                 <div className={styles.content}>
                     <div> i2X </div>
                     {(isAuthenticated())?(
-                            <div onClick={this.logout}>Logout</div>):<div>Login to Continue</div>
+                            <div><span onClick={this.logout}>Logout</span></div>):(<div>Login to Continue</div>)
                     }
                 </div>
             </div>

@@ -36,9 +36,13 @@
     padding-left: 1%;
 
 }
-.content div:nth-child(2){
+.content div:nth-child(2) {
     width:  50%;
-    cursor: pointer;
     text-align: right;
+
+}
+
+.content div:nth-child(2) span{
+    cursor: pointer;
 
 }
